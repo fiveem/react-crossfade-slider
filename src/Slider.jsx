@@ -9,8 +9,6 @@ export default class Slider extends React.Component {
             activeImage: 0
         };
 
-        console.log('perios ', props.period);
-
         this.period = setInterval(() => {
             this.setState((state) => ({
                 activeImage: state.activeImage === props.images.length - 1 ? 0 : state.activeImage + 1
