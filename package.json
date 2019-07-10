@@ -1,18 +1,29 @@
 {
-  "name": "react-crossfade-slider",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
-  },
+  "name": "@fiveem/react-crossfade-slider",
+  "description": "React Crossfade slider",
+  "version": "0.0.1",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build": "webpack --mode production",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
+  "keywords": [
+    "react",
+    "crossfade",
+    "slider",
+    "animation"
+  ],
+  "author": "Roxana Muntian <roxanamuntian@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fiveem/react-crossfade-slider.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fiveem/react-crossfade-slider/issues"
+  },
+  "homepage": "https://github.com/fiveem/react-crossfade-slider#readme",
+  "main": "lib/index.js",
   "eslintConfig": {
     "extends": "react-app"
   },
@@ -27,5 +38,29 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "peerDependencies": {
+    "react": "^16.8.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
+    "@storybook/addon-actions": "^5.1.9",
+    "@storybook/addon-links": "^5.1.9",
+    "@storybook/addons": "^5.1.9",
+    "@storybook/react": "^5.1.9",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^2.1.1",
+    "node-sass": "^4.12.0",
+    "react": "^16.8.6",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.33.0",
+    "webpack-cli": "^3.3.2"
+  },
+  "files": [
+    "lib"
+  ],
+  "dependencies": {}
 }
