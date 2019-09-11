@@ -1,7 +1,7 @@
 {
   "name": "@fiveem/react-crossfade-slider",
   "description": "React Crossfade slider",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "scripts": {
     "build": "webpack --mode production",
     "storybook": "start-storybook -p 6006",
