@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import style from './Slider.scss';
 
 export default class Slider extends React.Component {
@@ -17,21 +18,21 @@ export default class Slider extends React.Component {
     }
 
     render() {
-        const { images, animationDuration } = this.props;
+        const { images, animationDuration, containerStyle, imageStyle } = this.props;
         const { activeImage } = this.state;
 
         return (
-            <div className={style.crossfadeSlider}>
+            <div className={style.crossfadeSlider} style={containerStyle}>
                 {
                     images.map((image, index) => {
                         const customStyle = {
                             backgroundImage: `url(${image})`,
-                            animationDuration: `${animationDuration}s`
+                            animationDuration: `${animationDuration / 1000}s`
                         };
 
                         return (
                             <div className={`${style.image} ${activeImage === index ? style.active : style.hidden }`}
-                                 style={customStyle}
+                                 style={{...customStyle, ...imageStyle}}
                                  key={index}/>
                         );
                         
@@ -45,3 +46,20 @@ export default class Slider extends React.Component {
         clearInterval(this.period);
     }
 }
+
+Slider.defaultProps = {
+    period: 2000,
+    animationDuration: 1000
+};
+
+Slider.propTypes = {
+    images: PropTypes.array.isRequired,
+    period: PropTypes.number,
+    animationDuration: PropTypes.number,
+    containerStyle: PropTypes.oneOfType([
+        PropTypes.object
+    ]),
+    imageStyle: PropTypes.oneOfType([
+        PropTypes.object
+    ])
+};
